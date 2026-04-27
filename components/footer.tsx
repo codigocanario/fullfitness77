@@ -7,9 +7,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-primary/20 bg-black">
+      <div className="container mx-auto px-4 py-10">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Logo and tagline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,13 +24,13 @@ export function Footer() {
               width={60}
               height={60}
               sizes="48px"
-              className="w-12 h-12 object-contain"
+              className="h-12 w-12 object-contain"
             />
             <div>
-              <p className="font-[family-name:var(--font-display)] text-xl font-bold text-foreground">
+              <p className="font-[family-name:var(--font-display)] text-xl font-black tracking-tight text-foreground">
                 FULL<span className="text-primary">FITNESS</span>77
               </p>
-              <p className="text-muted-foreground text-sm italic">
+              <p className="text-sm italic text-muted-foreground">
                 &quot;Destruye lo que te destruye&quot;
               </p>
             </div>
@@ -44,16 +44,19 @@ export function Footer() {
             viewport={{ once: true }}
             className="motion-smooth flex flex-wrap justify-center gap-6"
           >
-            <a href="#inicio" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <a href="#inicio" className="text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
               Inicio
             </a>
-            <a href="#servicios" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <a href="#servicios" className="text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
               Servicios
             </a>
-            <a href="#precios" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <a href="#instalaciones" className="text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
+              Instalaciones
+            </a>
+            <a href="#precios" className="text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
               Precios
             </a>
-            <a href="#contacto" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <a href="#contacto" className="text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
               Contacto
             </a>
           </motion.nav>
@@ -68,11 +71,11 @@ export function Footer() {
           >
             <a
               href="tel:922782501"
-              className="font-[family-name:var(--font-display)] text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
+              className="font-[family-name:var(--font-display)] text-2xl font-black text-primary transition-colors hover:text-primary/80"
             >
               922 782 501
             </a>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               Adeje, Tenerife
             </p>
           </motion.div>
@@ -84,9 +87,9 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.45, delay: 0.22 }}
           viewport={{ once: true }}
-          className="motion-smooth mt-8 pt-8 border-t border-border text-center"
+          className="motion-smooth mt-8 border-t border-white/10 pt-8 text-center"
         >
-          <p className="text-muted-foreground text-sm">
+          <p className="text-xs text-muted-foreground">
             © {currentYear} FullFitness77. Todos los derechos reservados.
           </p>
         </motion.div>

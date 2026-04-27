@@ -43,39 +43,41 @@ export function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="servicios" className="py-24 bg-secondary">
+    <section id="servicios" className="border-b border-white/10 bg-secondary py-20">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="motion-smooth text-center mb-16"
+          className="motion-smooth mb-12 text-center"
         >
-          <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-foreground mb-4">
-            NUESTROS <span className="text-primary">SERVICIOS</span>
+          <p className="section-eyebrow mb-3">Servicios</p>
+          <h2 className="font-[family-name:var(--font-display)] text-4xl font-black uppercase italic tracking-[-0.04em] text-foreground md:text-6xl">
+            Entrena a tu <span className="text-primary">manera</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Todo lo que necesitas para transformar tu cuerpo y mente en un solo lugar
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.45, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="motion-smooth group bg-card p-8 border border-border hover:border-primary transition-all duration-300"
+              className="fitness-panel motion-smooth group relative overflow-hidden p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/80 hover:bg-card"
             >
-              <div className="w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+              <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_center,rgba(255,83,0,0.24),transparent_62%)] opacity-70" />
+              <div className="relative mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_36px_rgba(255,83,0,0.28)] transition-transform duration-300 group-hover:scale-105">
+                <service.icon className="h-8 w-8" />
               </div>
-              <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-foreground mb-3 uppercase tracking-wide">
+              <h3 className="relative mb-3 font-[family-name:var(--font-display)] text-xl font-black uppercase tracking-wide text-foreground">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="relative text-sm leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
             </motion.div>
